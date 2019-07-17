@@ -1,0 +1,4 @@
+server:
+    port: 6147
+    servlet:
+      context-path: /Jcrawler
