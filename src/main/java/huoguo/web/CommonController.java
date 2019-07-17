@@ -17,15 +17,20 @@ import java.io.IOException;
  * @Author: qinzhu
  */
 @RestController
-public class User {
+public class CommonController {
 
     @Autowired
     private Translator translator;
 
+    /**
+     *
+     * @param text 带翻译的文字
+     * @param enToZh true表示英译汉,false表示汉译英
+     */
     @PostMapping("/translate")
     @ApiOperation("翻译机器人")
-    public String translate(String text, Boolean isEntoCn) throws Exception {
-        return translator.translate(text, isEntoCn)
+    public String translate(String text, Boolean enToZh) throws Exception {
+        return translator.translate(text, enToZh)
                 .getResult().toString();
     }
 

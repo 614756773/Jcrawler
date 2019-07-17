@@ -31,6 +31,7 @@ public class Translator extends AbstractCrawler {
         WebElement element = wait.until(d -> d.findElement(By.xpath("//*[@id=\"source\"]")));
         element.clear();
         element.sendKeys(text);
+        Thread.sleep(350);
         WebElement result = wait.until(d -> d.findElement(By.xpath("/html/body/div[2]/div[1]/div[3]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div/span[1]/span")));
 
         this.result = result.getText();

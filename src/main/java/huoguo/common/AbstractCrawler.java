@@ -23,8 +23,6 @@ public abstract class AbstractCrawler implements Closeable {
 
     private static final String DRIVER_NAME = "webdriver.chrome.driver";
 
-//    private static final String DRIVER_PATH = "C:\\Users\\HotPot\\Desktop\\chromedriver.exe";
-
     private static final String DRIVER_PATH = "chromedriver.exe";
 
     // url的缓存,每当打开新的标签页,就把其url和handleName缓存起来,便于下次直接切换窗口
@@ -122,11 +120,11 @@ public abstract class AbstractCrawler implements Closeable {
 
     public void startup() {
         // FIXME 此处因为没找到driver判断是否启动的api,所以暂时用的异常来进行流程控制
-        boolean isStartup = false;
+        boolean isStartup = true;
         try {
             driver.getCurrentUrl();
         } catch (Exception e) {
-            isStartup = true;
+            isStartup = false;
         }
         if (isStartup) {
             throw new IllegalArgumentException("该爬虫机器人已启动,请不要重复启动");

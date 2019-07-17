@@ -18,7 +18,7 @@ public class A {
     private static WebDriver driver;
 
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\HotPot\\Desktop\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("headless", "disable-gpu");
